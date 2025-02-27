@@ -9,6 +9,7 @@ env:
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
+    if: ${{github.event_name=='push'}}
     env:
       Greeting: Hello
     steps:
