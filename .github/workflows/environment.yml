@@ -9,7 +9,6 @@ env:
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
-    if: ${{github.event_name=='push'}}
     env:
       Greeting: Hello
     steps:
@@ -18,3 +17,6 @@ jobs:
         env:
           First_Name: Mona
           DAY_OF_WEEK: Saturday
+
+      - name:  Print github
+        run: echo ${{github}}
